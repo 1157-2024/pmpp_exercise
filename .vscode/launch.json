@@ -9,7 +9,7 @@
             "name": "CUDA C++: Launch",
             "type": "cuda-gdb",
             "request": "launch",
-            "program": "${workspaceFolder}/matrix_mul"
+            "program": "${workspaceFolder}/tiling_matrix"
         },
         {
             "name": "CUDA C++: Attach",
