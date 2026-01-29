@@ -21,13 +21,14 @@ void matrix_mul(float *Out_d,float *M_d, float *N_d, int width){
 
 int main(){
     // 初始化数据
-    int width = 100;
+    int width = 2048;
+    int num_elements = width * width;
     size_t size = width * width * sizeof(float);
-    vector<float> M_h(size);
-    vector<float> N_h(size);
-    vector<float> Out_h(size);
+    vector<float> M_h(num_elements);
+    vector<float> N_h(num_elements);
+    vector<float> Out_h(num_elements);
 
-    for (int i = 0; i < size;i++){
+    for (int i = 0; i < num_elements;i++){
         M_h[i] = rand() % 10;
         N_h[i] = rand() % 10;
     }
