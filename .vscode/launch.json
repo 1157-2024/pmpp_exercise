@@ -2,17 +2,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "CUDA C++: Launch",
-            "type": "cuda-gdb",
+            "name": "CUDA Debug (Manual)",
+            "type": "cuda-gdb",     // 关键：必须是 cuda-gdb
             "request": "launch",
-            "program": "${workspaceFolder}/matrix_mul",
-
-            "environment": [
-                {
-                    "name": "LD_LIBRARY_PATH",
-                    "value": "/root/miniconda3/lib:${env:LD_LIBRARY_PATH}"
-                }
-            ]
-        },
+            "program": "${fileDirname}/${fileBasenameNoExtension}",
+            "preLaunchTask": "nvcc build" // 关键：调试前先运行上面的编译任务
+        }
     ]
 }

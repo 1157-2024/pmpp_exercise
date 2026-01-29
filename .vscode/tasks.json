@@ -1,0 +1,21 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "nvcc build", 
+            "type": "shell",
+            "command": "nvcc",
+            "args": [
+                "-g", "-G",        
+                "${file}",         // 当前打开的 .cu 文件
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}" // 生成同名可执行文件
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": "$nvcc"
+        }
+    ]
+}
